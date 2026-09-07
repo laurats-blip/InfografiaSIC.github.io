@@ -3,87 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Registro de Marca - SIC (HD)</title>
+    <title>Guía de Registro de Marca - SIC</title>
     <style>
         :root {
             --sic-blue: #002B49;
             --sic-blue-light: #004D80;
             --sic-yellow: #FFC72C;
             --sic-yellow-light: #FEF9C3;
-            --bg-soft: #E2E8F0;
+            --bg-soft: #F1F5F9;
             --card-white: #FFFFFF;
-            --text-dark: #000000; /* Negro puro para máxima nitidez */
+            --text-dark: #0F172A;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
             background-color: var(--bg-soft);
             color: var(--text-dark);
-            padding: 40px 20px;
+            padding: 20px 12px;
             display: flex;
             justify-content: center;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* CONTENEDOR ANCHO (1200px para evitar compresión) */
+        /* ANCHO RESPONSIVO PERFECTO PARA CUALQUIER PANTALLA */
         .infographic-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 850px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
         }
 
-        /* ENCABEZADO GRAN FORMATO */
+        /* ENCABEZADO CON TEXTO FLUIDO */
         .hero-header {
             background: linear-gradient(135deg, var(--sic-blue) 0%, var(--sic-blue-light) 100%);
             color: white;
-            padding: 45px 35px;
-            border-radius: 28px;
+            padding: 30px 20px;
+            border-radius: 20px;
             text-align: center;
-            border-bottom: 8px solid var(--sic-yellow);
+            border-bottom: 6px solid var(--sic-yellow);
         }
 
         .hero-header h1 {
-            font-size: 38px;
+            font-size: clamp(22px, 5vw, 32px);
             color: var(--sic-yellow);
-            margin-bottom: 12px;
-            font-weight: 900;
+            margin-bottom: 8px;
+            font-weight: 800;
         }
 
         .hero-header p {
-            font-size: 20px;
-            color: #FFFFFF;
-            font-weight: 600;
+            font-size: clamp(14px, 3.5vw, 17px);
+            color: #F8FAFC;
         }
 
         /* TARJETAS PRINCIPALES */
         .card {
             background: var(--card-white);
-            border-radius: 28px;
-            padding: 32px;
-            border: 2px solid #CBD5E1;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            gap: 18px;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
         .icon-bubble {
-            width: 60px;
-            height: 60px;
+            width: 44px;
+            height: 44px;
             background-color: var(--sic-yellow);
-            border-radius: 18px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -91,152 +89,153 @@
         }
 
         .icon-bubble svg {
-            width: 34px;
-            height: 34px;
+            width: 24px;
+            height: 24px;
             fill: var(--sic-blue);
         }
 
         .card-header h2 {
-            font-size: 28px;
+            font-size: clamp(17px, 4vw, 22px);
             color: var(--sic-blue);
-            font-weight: 900;
+            font-weight: 800;
         }
 
-        /* GRIDS */
+        /* COLUMNACIÓN AUTO-ADAPTABLE */
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
         }
 
-        /* CAJAS INTERNAS CON LETRA GRANDE */
         .sub-box {
             background-color: #F8FAFC;
-            border-radius: 20px;
-            padding: 24px;
-            border: 2px solid #E2E8F0;
+            border-radius: 14px;
+            padding: 16px;
+            border: 1px solid #E2E8F0;
         }
 
         .sub-box h3 {
-            font-size: 20px;
+            font-size: 16px;
             color: var(--sic-blue);
-            margin-bottom: 10px;
-            font-weight: 800;
+            margin-bottom: 6px;
+            font-weight: 700;
         }
 
         .sub-box p {
-            font-size: 17px;
+            font-size: 14px;
             color: var(--text-dark);
-            line-height: 1.6;
-            font-weight: 600;
+            line-height: 1.5;
         }
 
-        /* ETAPAS */
+        /* ETAPAS FLUIDAS */
         .process-flow {
-            display: flex;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
         }
 
         .process-step {
-            flex: 1;
             background: var(--sic-blue);
             color: white;
-            padding: 24px 18px;
-            border-radius: 22px;
+            padding: 16px;
+            border-radius: 16px;
             text-align: center;
         }
 
         .process-step .step-tag {
             background-color: var(--sic-yellow);
             color: var(--sic-blue);
-            font-size: 14px;
-            font-weight: 900;
-            padding: 6px 14px;
-            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 12px;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .process-step h3 {
-            font-size: 19px;
+            font-size: 15px;
             color: var(--sic-yellow);
-            margin-bottom: 8px;
-            font-weight: 800;
+            margin-bottom: 6px;
         }
 
         .process-step p {
-            font-size: 16px;
+            font-size: 13px;
             color: #FFFFFF;
-            line-height: 1.5;
-            font-weight: 500;
+            line-height: 1.4;
         }
 
-        /* ALERTA SIPI */
+        /* CAJA SIPI RESPONSIVA */
         .alert-card {
             background-color: var(--sic-yellow-light);
-            border: 3px solid var(--sic-yellow);
-            border-radius: 24px;
-            padding: 28px;
+            border: 2px solid var(--sic-yellow);
+            border-radius: 18px;
+            padding: 18px;
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 14px;
         }
 
         .alert-card h3 {
-            font-size: 22px;
+            font-size: 16px;
             color: #713F12;
-            margin-bottom: 6px;
-            font-weight: 900;
+            margin-bottom: 4px;
+            font-weight: 800;
         }
 
         .alert-card p {
-            font-size: 18px;
+            font-size: 14px;
             color: #451A03;
-            line-height: 1.5;
-            font-weight: 600;
+            line-height: 1.4;
         }
 
-        /* PRECIOS */
+        /* TARJETAS PRECIO */
         .price-badge {
             background: var(--sic-blue);
             color: white;
-            padding: 22px;
-            border-radius: 20px;
+            padding: 16px;
+            border-radius: 14px;
             text-align: center;
         }
 
         .price-badge .amount {
-            font-size: 30px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: 800;
             color: var(--sic-yellow);
-            margin-top: 6px;
+            margin: 4px 0;
         }
 
         .discount-pill {
             background: #F0FDF4;
-            border: 2px solid #86EFAC;
-            border-radius: 20px;
-            padding: 20px;
+            border: 1px solid #86EFAC;
+            border-radius: 14px;
+            padding: 14px;
         }
 
         .discount-pill h4 {
             color: #14532D;
-            font-size: 18px;
-            margin-bottom: 6px;
-            font-weight: 900;
+            font-size: 15px;
+            margin-bottom: 4px;
+            font-weight: 800;
         }
 
         .discount-pill p {
             color: #166534;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 1.5;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* AJUSTES EXTRA EN CELULARES PEQUEÑOS */
+        @media (max-width: 600px) {
+            body { padding: 12px 8px; }
+            .card { padding: 16px; }
+            .alert-card { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -354,16 +353,16 @@
             <h2>¿Cuánto cuesta y cómo puedes obtener un descuento?</h2>
         </div>
 
-        <div class="grid-2" style="margin-bottom: 20px;">
+        <div class="grid-2" style="margin-bottom: 14px;">
             <div class="price-badge">
-                <span style="font-size: 16px;">Trámite en Línea (SIPI)</span>
+                <span style="font-size: 14px;">Trámite en Línea (SIPI)</span>
                 <div class="amount">$1.347.500 COP</div>
-                <span style="opacity: 0.9; font-size: 14px;">Ahorras costos de digitalización</span>
+                <span style="opacity: 0.9; font-size: 12px;">Ahorras costos de digitalización</span>
             </div>
             <div class="price-badge" style="background: var(--sic-blue-light);">
-                <span style="font-size: 16px;">Trámite Presencial (Bogotá)</span>
+                <span style="font-size: 14px;">Trámite Presencial (Bogotá)</span>
                 <div class="amount">$1.638.500 COP</div>
-                <span style="opacity: 0.9; font-size: 14px;">Atención en oficina física</span>
+                <span style="opacity: 0.9; font-size: 12px;">Atención en oficina física</span>
             </div>
         </div>
 
