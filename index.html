@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Registro de Marca - SIC (HD)</title>
+    <style>
+        :root {
+            --sic-blue: #002B49;
+            --sic-blue-light: #004D80;
+            --sic-yellow: #FFC72C;
+            --sic-yellow-light: #FEF9C3;
+            --bg-soft: #E2E8F0;
+            --card-white: #FFFFFF;
+            --text-dark: #000000; /* Negro puro para máxima nitidez */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* CONTENEDOR ANCHO (1200px para evitar compresión) */
+        .infographic-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* ENCABEZADO GRAN FORMATO */
+        .hero-header {
+            background: linear-gradient(135deg, var(--sic-blue) 0%, var(--sic-blue-light) 100%);
+            color: white;
+            padding: 45px 35px;
+            border-radius: 28px;
+            text-align: center;
+            border-bottom: 8px solid var(--sic-yellow);
+        }
+
+        .hero-header h1 {
+            font-size: 38px;
+            color: var(--sic-yellow);
+            margin-bottom: 12px;
+            font-weight: 900;
+        }
+
+        .hero-header p {
+            font-size: 20px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        /* TARJETAS PRINCIPALES */
+        .card {
+            background: var(--card-white);
+            border-radius: 28px;
+            padding: 32px;
+            border: 2px solid #CBD5E1;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .icon-bubble {
+            width: 60px;
+            height: 60px;
+            background-color: var(--sic-yellow);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-bubble svg {
+            width: 34px;
+            height: 34px;
+            fill: var(--sic-blue);
+        }
+
+        .card-header h2 {
+            font-size: 28px;
+            color: var(--sic-blue);
+            font-weight: 900;
+        }
+
+        /* GRIDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* CAJAS INTERNAS CON LETRA GRANDE */
+        .sub-box {
+            background-color: #F8FAFC;
+            border-radius: 20px;
+            padding: 24px;
+            border: 2px solid #E2E8F0;
+        }
+
+        .sub-box h3 {
+            font-size: 20px;
+            color: var(--sic-blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .sub-box p {
+            font-size: 17px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* ETAPAS */
+        .process-flow {
+            display: flex;
+            gap: 16px;
+        }
+
+        .process-step {
+            flex: 1;
+            background: var(--sic-blue);
+            color: white;
+            padding: 24px 18px;
+            border-radius: 22px;
+            text-align: center;
+        }
+
+        .process-step .step-tag {
+            background-color: var(--sic-yellow);
+            color: var(--sic-blue);
+            font-size: 14px;
+            font-weight: 900;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .process-step h3 {
+            font-size: 19px;
+            color: var(--sic-yellow);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .process-step p {
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* ALERTA SIPI */
+        .alert-card {
+            background-color: var(--sic-yellow-light);
+            border: 3px solid var(--sic-yellow);
+            border-radius: 24px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .alert-card h3 {
+            font-size: 22px;
+            color: #713F12;
+            margin-bottom: 6px;
+            font-weight: 900;
+        }
+
+        .alert-card p {
+            font-size: 18px;
+            color: #451A03;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        /* PRECIOS */
+        .price-badge {
+            background: var(--sic-blue);
+            color: white;
+            padding: 22px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .price-badge .amount {
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--sic-yellow);
+            margin-top: 6px;
+        }
+
+        .discount-pill {
+            background: #F0FDF4;
+            border: 2px solid #86EFAC;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .discount-pill h4 {
+            color: #14532D;
+            font-size: 18px;
+            margin-bottom: 6px;
+            font-weight: 900;
+        }
+
+        .discount-pill p {
+            color: #166534;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="infographic-container">
+
+    <header class="hero-header">
+        <h1>Guía para Registrar tu Marca en Colombia</h1>
+        <p>Todo lo que necesitas saber antes de hacer tu solicitud ante la Superintendencia de Industria y Comercio (SIC)</p>
+    </header>
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </div>
+            <h2>¿Qué debes conocer antes de empezar?</h2>
+        </div>
+        <div class="grid-2">
+            <div class="sub-box">
+                <h3>Reglas internacionales (Decisión 486)</h3>
+                <p>La Decisión 486 del año 2000 es la <strong>ley internacional</strong> de la Comunidad Andina. Define qué se considera marca, qué cosas están prohibidas registrar y qué derechos tienes como dueño.</p>
+            </div>
+            <div class="sub-box">
+                <h3>Tiempo de protección (10 años)</h3>
+                <p>Tu marca estará protegida exclusivamente a tu nombre durante <strong>una década entera</strong>, y podrás renovarla de forma indefinida cada 10 años.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <h2>¿Qué debes consultar antes de solicitar tu marca?</h2>
+        </div>
+        <div class="grid-2">
+            <div class="sub-box">
+                <h3>Clasificación de tu actividad (Niza)</h3>
+                <p>Debes ubicar tu negocio en el catálogo del 1 al 45. Elige si vendes <strong>productos (clases 1 al 34)</strong> o si prestas <strong>servicios (clases 35 al 45)</strong>.</p>
+            </div>
+            <div class="sub-box">
+                <h3>Búsqueda de antecedentes</h3>
+                <p>Revisa gratis en la página de la SIC si alguien más ya registró tu nombre. Si pagas el trámite y la marca ya existe, te la negarán y <strong>no devuelven el dinero</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <h2>¿De qué forma vas a presentar tu marca?</h2>
+        </div>
+        <div class="grid-3">
+            <div class="sub-box">
+                <h3>Solo Texto (Nominativa)</h3>
+                <p>Protege únicamente las letras del nombre. Es ideal si más adelante vas a cambiar el diseño del logo pero quieres mantener la marca.</p>
+            </div>
+            <div class="sub-box">
+                <h3>Solo Imagen (Figurativa)</h3>
+                <p>Protege un símbolo gráfico o dibujo sin texto. Se usa cuando el icono visual es reconocible por sí solo.</p>
+            </div>
+            <div class="sub-box">
+                <h3>Texto + Imagen (Mixta)</h3>
+                <p>Combina el nombre con el logotipo y sus colores. Es la opción más completa para proteger la imagen real que ven tus clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+            </div>
+            <h2>¿Cuáles son las etapas del proceso en la SIC?</h2>
+        </div>
+        <div class="process-flow">
+            <div class="process-step">
+                <span class="step-tag">Etapa 1</span>
+                <h3>Examen de Forma</h3>
+                <p>La SIC verifica que el formulario esté bien diligenciado y los documentos anexos estén completos.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-tag">Etapa 2</span>
+                <h3>Publicación en Gaceta</h3>
+                <p>Se publica durante 30 días hábiles para que otros negocios revisen si la marca se parece a la suya.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-tag">Etapa 3</span>
+                <h3>Examen de Fondo</h3>
+                <p>Un abogado de la SIC analiza el caso completo y emite la decisión final sobre si concede la marca.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="alert-card">
+        <div class="icon-bubble" style="background-color: #FDE047;">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        </div>
+        <div>
+            <h3>¿A nombre de quién debes crear la cuenta en la plataforma virtual (SIPI)?</h3>
+            <p>Abre siempre el usuario a <strong>título personal con tu número de cédula</strong>. Si la marca pertenecerá a una empresa, los datos del NIT y razón social se vinculan dentro del formulario durante el trámite.</p>
+        </div>
+    </div>
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-bubble">
+                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            </div>
+            <h2>¿Cuánto cuesta y cómo puedes obtener un descuento?</h2>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 20px;">
+            <div class="price-badge">
+                <span style="font-size: 16px;">Trámite en Línea (SIPI)</span>
+                <div class="amount">$1.347.500 COP</div>
+                <span style="opacity: 0.9; font-size: 14px;">Ahorras costos de digitalización</span>
+            </div>
+            <div class="price-badge" style="background: var(--sic-blue-light);">
+                <span style="font-size: 16px;">Trámite Presencial (Bogotá)</span>
+                <div class="amount">$1.638.500 COP</div>
+                <span style="opacity: 0.9; font-size: 14px;">Atención en oficina física</span>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="discount-pill">
+                <h4>28% de descuento (MiPyme)</h4>
+                <p>Presenta una carta simple declarando que eres micro, pequeña o mediana empresa.</p>
+            </div>
+            <div class="discount-pill">
+                <h4>25% de descuento (SiGEPI)</h4>
+                <p>Asiste a 2 capacitaciones virtuales gratuitas impartidas por expertos de la SIC antes de hacer la solicitud.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
